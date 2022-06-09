@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 07:57 AM
+-- Generation Time: Jun 09, 2022 at 08:21 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -121,8 +121,7 @@ CREATE TABLE `user_request` (
   `activity_id` int(11) NOT NULL,
   `supporting_docs` mediumblob DEFAULT NULL,
   `rendered_hours` int(11) NOT NULL,
-  `date_requested` datetime NOT NULL,
-  `status` varchar(255) NOT NULL
+  `date_requested` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
