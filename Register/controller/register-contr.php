@@ -6,7 +6,7 @@ class RegisterContr extends Register
     private $email;
     private $pwd;
     private $pwdRepeat;
-    
+
 
 
     public function __construct($email, $pwd, $pwdRepeat)
@@ -48,6 +48,7 @@ class RegisterContr extends Register
 
         $this->setUsers($this->pwd, $this->email);
     }
+
     private function emptyInput()
     {
         $result = true;
