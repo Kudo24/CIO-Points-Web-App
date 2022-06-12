@@ -14,5 +14,5 @@ if (isset($_POST['submit'])) {
 
     $register->registerUser();
 
-    header("location: ../index.php?error=none");
+    header("location: ../views/AddDetails.php?error=none");
 }
