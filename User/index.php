@@ -9,9 +9,7 @@
 </head>
 
 <body>
-    <div>
-        User Login
-    </div>
+    <h1>User Login</h1>
     <form action="" method="POST">
         <div>
             <label for="email">Email: </label>

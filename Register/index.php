@@ -10,7 +10,7 @@
             <input type="password" name="pwd" id="pwd" required>
         </div>
         <div>
-            <label for="paswrodRpt">Repeat Password: </label>
+            <label for="pwdrepeat">Repeat Password: </label>
             <input type="password" name="pwdrepeat" id="pwdrepeat" required>
         </div>
         <button type="submit" name="submit">submit</button>

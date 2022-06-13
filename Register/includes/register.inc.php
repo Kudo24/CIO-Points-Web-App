@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     include "../databases/database.classes.php";
     include "../classes/register.classes.php";
-    include "../controller/register-contr.php";
+    include "../controller/register.contr.php";
 
     $register =  new RegisterContr($email, $pwd, $pwdRepeat);
 

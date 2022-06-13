@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <div>
-        Admin Login
-    </div>
+    <h1>Admin Login</h1>
     <form action="" method="POST">
         <div>
             <label for="email">Email: </label>
