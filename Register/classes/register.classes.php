@@ -3,12 +3,12 @@
 
 class Register extends Dbh
 {
-    protected function setUsers($pwd, $email)
+    protected function setUsers($pwd, $email, $firstname)
     {
-        $stmt = $this->connect()->prepare('INSERT INTO user (password, email) values (?,?);');
+        $stmt = $this->connect()->prepare('INSERT INTO user (password, email, first_name) values (?,?,?);');
         $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
-        if (!$stmt->execute([$hashedPwd, $email])) {
+        if (!$stmt->execute([$hashedPwd, $email, $firstname])) {
             $stmt = null;
             header("location: ../index.php?error=stmtfailed");
             exit();

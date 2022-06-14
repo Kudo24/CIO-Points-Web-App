@@ -15,5 +15,5 @@ if (isset($_POST['submit'])) {
 
     $addDetails->AddDetails();
 
-    header("location: ../index.php?status=InputSave");
+    header("location: /cio-points-web-app/User/views/user-dashboard.php?status=LoginSuccess");
 }

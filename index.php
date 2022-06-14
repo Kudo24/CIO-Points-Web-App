@@ -9,9 +9,18 @@
 </head>
 
 <body>
-    <a href="Admin/index.php">Admin</a><br>
-    <a href="User/index.php">User</a><br>
-    <a href="Register/index.php">Register</a><br>
+
+    <?php
+
+    session_start();
+    if (isset($_SESSION['userid'])) {
+        header("location: /cio-points-web-app/User/views/user-dashboard.php?status=LoginSuccess"); ?>
+
+    <?php } else { ?>
+        <a href="Admin/index.php">Admin</a><br>
+        <a href="User/index.php">User</a><br>
+        <a href="Register/index.php">Register</a><br>
+    <?php } ?>
 </body>
 
 </html>

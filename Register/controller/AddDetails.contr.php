@@ -29,6 +29,7 @@ class AddDetailsContr extends AddDetails
         }
 
         $this->AddInfo($this->firstname, $this->middlename, $this->lastname, $this->contact_num, $this->address);
+        $this->IsLogin($this->firstname, $this->middlename, $this->lastname);
     }
 
     private function emptyInput()
