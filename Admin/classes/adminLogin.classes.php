@@ -1,11 +1,10 @@
 <?php
 
-class UserLogin extends Dbh
+class AdminLogin extends Dbh
 {
 
-    protected function getUser($email, $pwd)
+    protected function getAdminUser($email, $pwd)
     {
-
         $stmt = $this->connect()->prepare('SELECT password from user where email = ?;');
 
         if (!$stmt->execute(array($email))) {
@@ -29,7 +28,7 @@ class UserLogin extends Dbh
             exit();
         } elseif ($checkPwd == true) {
             $pwd = $pwdHashed[0]['password'];
-            $stmt = $this->connect()->prepare('SELECT * from user where email = ? and password = ?;');
+            $stmt = $this->connect()->prepare("SELECT role.role_id, user.first_name, user.last_name,user.email, user.password, role.is_admin from user RIGHT JOIN role ON role.user_id = user.user_id WHERE role.is_admin = 'yes' and user.email = ? and user.password = ?;");
 
             if (!$stmt->execute(array($email, $pwd))) {
                 $stmt = null;
@@ -39,15 +38,15 @@ class UserLogin extends Dbh
 
             if ($stmt->rowCount() == 0) {
                 $stmt = null;
-                header("location: ../index.php?error=usernotfound");
+                header("location: ../index.php?error=Adminnotfound");
                 exit();
             }
 
-            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             session_start();
-            $_SESSION['userid'] = $user[0]['user_id'];
-            $_SESSION['firstname'] = $user[0]['first_name'];
+            $_SESSION['adminid'] = $admin[0]['role_id'];
+            $_SESSION['adminfirstname'] = $admin[0]['first_name'];
         }
         $stmt = null;
     }
