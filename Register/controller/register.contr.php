@@ -44,6 +44,7 @@ class RegisterContr extends Register
         }
 
         $this->setUsers($this->pwd, $this->email, $this->firstname);
+        $this->role($this->email);
     }
 
     private function emptyInput()
